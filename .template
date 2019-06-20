@@ -4,6 +4,8 @@ This template can be cloned and used to make a document store repo in Git,
 all folders should have a `.template` file. The `.template` file will get used as
 the index header.
 
+This is also now a Github template, https://help.github.com/en/articles/creating-a-repository-from-a-template
+
 All files should use markdown, as github will reder them as HTML.
 you then have change tracking of all files.
 
