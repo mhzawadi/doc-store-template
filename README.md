@@ -4,6 +4,7 @@
     - [example-file](example1/example2/example-file.md)
   - [example3](example1/example3)
     - [example-file](example1/example3/example-file.md)
+  - [example-file](example1/example-file.md)
 
 
 # Template Document Git repo

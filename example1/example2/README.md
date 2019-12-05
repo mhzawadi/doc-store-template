@@ -1,5 +1,5 @@
 
-- [example-file](example2/example-file.md)
+- [example-file](example-file.md)
 
 
 # Example Sub Directory
