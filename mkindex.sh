@@ -33,7 +33,11 @@ do
           MDNAME=${MDPATH%.md}
           MDDIR=`echo $MD | awk -F'/' '{print $2}'`
           echo "    - [${MDNAME}](${DIR}/${MDDIR}/${MDPATH})" >> README.md
-          echo "  - [${MDNAME}](${SUB_DIR}/${MDPATH})" >> $DIR/README.md
+          echo "  - [${MDNAME}](${SUB_DIR}/${MDPATH})" >> ${DIR}/README.md
+          if [ -f $DIR/$SUB_DIR/.template ]
+          then
+            echo "- [${MDNAME}](${SUB_DIR}/${MDPATH})" >> ${DIR}/${SUB_DIR}/README.md
+          fi
       done
       if [ -f $DIR/$SUB_DIR/.template ]
       then
