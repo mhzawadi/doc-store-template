@@ -1,6 +1,13 @@
 # Template Document Git repo
 
-This template can be cloned and used to make a document store repo in Git,
+This template can be cloned and used to make a document store repo in Git, below are the commands to make that work.
+
+```
+git clone https://github.com/mhzawadi/doc-store-template.git
+mkdir 'doc-store';cd doc-store
+git init --template=../doc-store-template
+```
+
 all folders should have a `.template` file. The `.template` file will get used as
 the index header.
 
