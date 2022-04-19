@@ -8,6 +8,12 @@ get_dir () {
   sort
 }
 
+set_tags(){
+  FILE=$1
+  tags=$(/usr/bin/grep '^tags' $FILE | /usr/bin/awk -F ': ' '{printf(" %s", $2)}')
+  echo "$tags"
+}
+
 echo '' > README.md
 get_dir '.' |
 while read DIR
@@ -38,8 +44,8 @@ do
           MDPATH=${MD##*/}
           MDNAME=${MDPATH%.md}
           MDDIR=`echo $MD | awk -F'/' '{print $2}'`
-          echo "    - [$MDNAME]($DIR/$MDDIR/$MDPATH)" >> README.md
-          echo "  - [$MDNAME]($SUB_DIR/$MDPATH)" >> $DIR/README.md
+          echo "    - [$MDNAME]($DIR/$MDDIR/$MDPATH)$(set_tags "$DIR/$MDDIR/$MDPATH")" >> README.md
+          echo "  - [$MDNAME]($SUB_DIR/$MDPATH)$(set_tags "$DIR/$MDDIR/$MDPATH")" >> $DIR/README.md
       done
     done
     find ./$DIR -depth 1 -name "*.md" |grep -v -e "README.md"| sort |
@@ -47,9 +53,9 @@ do
     do
         MDPATH=${MD##*/}
         MDNAME=${MDPATH%.md}
-        MDDIR=`echo $MD | awk -F'/' '{print $2}'`
-        echo "  - [$MDNAME]($MDDIR/$MDPATH)" >> README.md
-        echo "- [$MDNAME]($MDPATH)" >> $DIR/README.md
+        MDDIR=`echo $MD | /usr/bin/awk -F'/' '{print $2}'`
+        echo "  - [$MDNAME]($MDDIR/$MDPATH)$(set_tags "$MDDIR/$MDPATH")" >> README.md
+        echo "- [$MDNAME]($MDPATH)$(set_tags "$MDDIR/$MDPATH")" >> $DIR/README.md
     done
     echo "\n" >> $DIR/README.md
     cat $DIR/.template >> $DIR/README.md
