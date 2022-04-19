@@ -20,6 +20,19 @@ There are two tools in this repo
 - `mkdir` will make a new directory and create a template file
 - `mkindex` will rebuild the index files, please run this before you commit!
 
+## Page tags
+
+Do you need to have your page searchable by other words?
+Wish you could add tags?
+
+Well your wish is now answered, just add the below code to your page (to or bottom)
+
+```
+<!--
+tags: this, will , get added, to , the, end, of, your, page, link
+-->
+```
+
 ## code comments
 
 If you include any code in a page, please use the right [language](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml) as it will colour code.

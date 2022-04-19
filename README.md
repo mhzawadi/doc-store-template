@@ -1,22 +1,15 @@
 
 - [example1](example1/README.md)
-  - [example2](example1/example2/README.md)
+  - [example2](example1/example2)
     - [example-file](example1/example2/example-file.md)
   - [example3](example1/example3)
     - [example-file](example1/example3/example-file.md)
-  - [example-file](example1/example-file.md)
+  - [example-file](example1/example-file.md) this, will , get added, to , the, end, of, your, page, link
 
 
 # Template Document Git repo
 
-This template can be cloned and used to make a document store repo in Git, below are the commands to make that work.
-
-```
-git clone https://github.com/mhzawadi/doc-store-template.git
-mkdir 'doc-store';cd doc-store
-git init --template=../doc-store-template
-```
-
+This template can be cloned and used to make a document store repo in Git,
 all folders should have a `.template` file. The `.template` file will get used as
 the index header.
 
@@ -35,6 +28,19 @@ There are two tools in this repo
 
 - `mkdir` will make a new directory and create a template file
 - `mkindex` will rebuild the index files, please run this before you commit!
+
+## Page tags
+
+Do you need to have your page searchable by other words?
+Wish you could add tags?
+
+Well your wish is now answered, just add the below code to your page (to or bottom)
+
+```
+<!--
+tags: this, will , get added, to , the, end, of, your, page, link
+-->
+```
 
 ## code comments
 
